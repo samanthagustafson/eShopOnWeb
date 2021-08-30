@@ -2,6 +2,7 @@
 # Build a Docker image
 # https://docs.microsoft.com/azure/devops/pipelines/languages/docker
 
+
 trigger:
 - master
 
@@ -27,3 +28,9 @@ stages:
         dockerfile: '$(Build.SourcesDirectory)/.devcontainer/Dockerfile'
         tags: |
           $(tag)
+    - task: HCLAppScanOnCloud@2
+      inputs:
+        AppSecTestService: 'HCL AppScan'
+        applications: '6fec47ad-f8cb-461a-ba42-b867e8929a72'
+        scanname: 'azure-test'
+        scantype: 'static'
