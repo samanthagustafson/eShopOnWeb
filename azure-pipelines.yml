@@ -8,7 +8,8 @@ trigger:
 
 resources:
 - repo: self
-
+pool:
+  name: new
 variables:
   tag: '$(Build.BuildId)'
 
@@ -18,8 +19,6 @@ stages:
   jobs:
   - job: Build
     displayName: Build
-    pool:
-      vmImage: ubuntu-latest
     steps:
     - task: Docker@2
       displayName: Build an image
