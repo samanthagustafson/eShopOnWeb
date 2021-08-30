@@ -5,6 +5,9 @@
 
 trigger:
 - master
+- task: DockerInstaller@0
+  inputs:
+    dockerVersion: '17.09.0-ce'
 
 resources:
 - repo: self
