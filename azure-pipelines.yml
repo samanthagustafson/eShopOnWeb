@@ -26,3 +26,4 @@ stages:
         applications: '6fec47ad-f8cb-461a-ba42-b867e8929a72'
         scanname: 'azure-test'
         scantype: 'static'
+        scanloc: 'eShopOnWeb.sln'
